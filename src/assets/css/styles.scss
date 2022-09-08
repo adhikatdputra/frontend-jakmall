@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+$font: "Plus Jakarta Sans", sans-serif;
+$heading: "Montserrat", sans-serif;
+$main-color: #ff8a00;
+$green-color: #1bd97b;
+$desc-color: #2d2a40;
+
+body {
+  position: relative;
+  margin: 0;
+}
+
+#app {
+  font-family: $font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $desc-color;
+}
+
+a {
+  text-decoration: none !important;
+  cursor: pointer !important;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: $desc-color;
+}
+
+nav a.router-link-exact-active {
+  color: $main-color;
+}
+
+.heading {
+  font-family: $heading;
+  font-weight: 700;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-ctn-between {
+  justify-content: space-between;
+}
+
+.d-flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-area {
+  position: relative;
+
+  .f-input {
+    width: 100%;
+    padding: 24px 35px 8px 16px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: 600;
+    font-family: $font;
+  }
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.465);
+    pointer-events: none;
+    transition: 0.5s;
+    font-weight: 500;
+  }
+
+  .f-input:focus {
+    border-color: #1bd97b;
+    outline: none !important;
+  }
+
+  .f-input:focus ~ .label,
+  .f-input:valid ~ .label {
+    top: -8px;
+    font-size: 12px;
+    left: 0;
+    color: $green-color;
+  }
+
+  .f-input.error ~ .label,
+  .f-input.error ~ .label {
+    color: #ff8a00;
+  }
+
+  .f-input.valid {
+    border-color: #1bd97b;
+  }
+  .f-input.error {
+    border-color: #ff8a00;
+  }
+
+  .icn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+  }
+
+  .txt-help {
+    color: #ff8a00;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+  }
+
+  .count {
+    color: #2d2a40;
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+  }
+}
+
+.btn {
+  display: block;
+  padding: 18px 0px;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 3px 5px 10px rgba(255, 138, 0, 0.2);
+  border-radius: 2px;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: $main-color;
+  border-color: $main-color;
+}
+
+.btn-primary:hover {
+  color: $main-color !important;
+  background-color: #fff;
+  border-color: $main-color;
+}
+
+.alert-notif {
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  padding: 16px 24px;
+  border-radius: 35px;
+  min-width: 320px;
+  text-align: center;
+  top: -120px;
+  font-weight: 700;
+  transition: all 0.7s ease-in-out;
+}
+
+.alert-notif.success {
+  background: $green-color;
+  color: #fff;
+  top: 30px;
+}
+
+.alert-notif.danger {
+  background: $main-color;
+  color: #fff;
+  top: 30px;
+}
